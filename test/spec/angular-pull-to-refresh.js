@@ -1,16 +1,17 @@
 'use strict';
 /* global jasmine */
 
-describe('mgcrea.pullToRefresh', function() {
+describe('spica.pullToRefresh', function() {
 
-  var $injector, $compile, $timeout, scope, sandbox;
+  var $injector, $compile, $timeout, $translate, scope, sandbox;
 
-  beforeEach(module('mgcrea.pullToRefresh'));
+  beforeEach(module('spica.pullToRefresh'));
 
   beforeEach(inject(function (_$injector_) {
     $injector = _$injector_;
     $compile = $injector.get('$compile');
     $timeout = $injector.get('$timeout');
+    $translate = $injector.get('$translate');
     scope = $injector.get('$rootScope');
     sandbox = $('<div>').attr('id', 'sandbox').appendTo('body');
   }));
@@ -40,12 +41,22 @@ describe('mgcrea.pullToRefresh', function() {
     return jQuery(element[0]);
   }
 
+  function languageChange(lang) {
+    $translate.uses(lang);
+  }
+
   it('should correctly initialize and attach to DOM', function () {
     var elm = compileDirective('basic');
     var ptrElement = elm.find('.pull-to-refresh');
     expect(ptrElement.length).toBe(1);
     var config = $injector.get('pullToRefreshConfig');
-    expect(ptrElement.children('span').html()).toBe(config.text.pull);
+    console.log(ptrElement.children('span').html());
+    expect(ptrElement.children('span').html()).toBe($translate(config.text.pull));
+    languageChange('ko_KR');
+    elm = compileDirective('basic');
+    ptrElement = elm.find('.pull-to-refresh');
+    console.log(ptrElement.children('span').html());
+    expect(ptrElement.children('span').html()).toBe($translate(config.text.pull));
   });
 
 });

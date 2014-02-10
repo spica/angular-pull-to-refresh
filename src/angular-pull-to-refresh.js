@@ -1,14 +1,14 @@
 'use strict';
 
-angular.module('mgcrea.pullToRefresh', [])
+angular.module('spica.pullToRefresh', ['pascalprecht.translate'])
 
   .constant('pullToRefreshConfig', {
     treshold: 60,
     debounce: 400,
     text: {
-      pull: 'pull to refresh',
-      release: 'release to refresh',
-      loading: 'refreshing...'
+      pull: 'PULL',
+      release: 'RELEASE',
+      loading: 'LOADING'
     },
     icon: {
       pull: 'fa fa-arrow-down',
@@ -17,7 +17,7 @@ angular.module('mgcrea.pullToRefresh', [])
     }
   })
 
-  .directive('pullToRefresh', function($compile, $timeout, $q, pullToRefreshConfig) {
+  .directive('pullToRefresh', function($compile, $timeout, $q, $translate, pullToRefreshConfig) {
 
     return {
       scope: true,

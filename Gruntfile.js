@@ -189,7 +189,7 @@ module.exports = function(grunt) {
     },
     ngtemplates: {
       options: {
-        module: 'mgcrea.pullToRefresh',
+        module: 'spica.pullToRefresh',
       },
       dev: {
         cwd: 'src',
