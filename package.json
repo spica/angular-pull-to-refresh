@@ -1,26 +1,29 @@
 {
-  "name": "angular-pull-to-refresh",
-  "version": "0.3.0",
-  "description": "angular-pull-to-refresh",
+  "name": "spica-angular-pull-to-refresh",
+  "version": "0.1.0",
+  "description": "angular-pull-to-refresh translate",
   "keywords": [
     "angular"
   ],
-  "homepage": "https://github.com/mgcrea/angular-pull-to-refresh",
-  "bugs": "https://github.com/mgcrea/angular-pull-to-refresh/issues",
+  "homepage": "https://github.com/spica/angular-pull-to-refresh",
+  "bugs": "https://github.com/spica/angular-pull-to-refresh/issues",
   "author": {
-    "name": "Olivier Louvignes",
-    "email": "olivier@mg-crea.com",
-    "url": "https://github.com/mgcrea"
+    "name": "Myunkyu Park",
+    "email": "spica@wafflestudio.com",
+    "url": "https://github.com/spica"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mgcrea/angular-pull-to-refresh.git"
+    "url": "https://github.com/spica/angular-pull-to-refresh.git"
   },
   "licenses": [
     {
       "type": "MIT"
     }
   ],
+  "dependencies": {
+    "angular-translate" : "~1.1.0"
+  },
   "devDependencies": {
     "connect-livereload": "~0.3.0",
     "grunt": "~0.4.1",
